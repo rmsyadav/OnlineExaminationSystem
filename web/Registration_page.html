@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="Style/Stylesheet.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+        <script type="text/javascript" src="Script/jquery.js"></script>
+        <script type="text/javascript" src="Script/Form_validation.js"></script>
+       
+        <link rel="stylesheet" type="text/css" href="Style/Navbar.css"> 
+        <script>
+       $(document).ready(function(){
+           
+           $("#register").click(function(){
+              
+              connect();     
+           
+             }); 
+        });
+    function connect()
+     {
+        if(!validate())
+          {
+           return; 
+          }
+     
+  
+      var data={"username":username,"password":password1,"userid":userid,"mobileno":mobileno};
+      var jqxhr=$.post("RegisterControllerServlet",data,processresponse);
+      jqxhr.error(handleError);
+     
+     
+    }
+      function validate()
+            {
+                  var status=true;    
+                  username=document.getElementById("username").value;
+                  userid=document.getElementById("userid").value;   
+                  mobileno=document.getElementById("phone").value;
+                  
+                  password1=document.getElementById("password").value;  
+                  password2=document.getElementById("reenterpassword").value;
+                  
+                  if(username===""||userid===""||password1===""||password2===""||mobileno==="")
+                  {  
+                      status=false;
+                  }
+                 
+                   if(password1.toString()!==password2.toString())
+                   {
+                       alert("reEnterPassword does not match!");
+                        status=false;  
+                   }
+                
+    
+                 /* var valid=$("input[name='Choice']:checked").val();
+                 
+                  if(valid!=="1")
+                  {
+                      $("#sp7").text("plese Select the Gender!");
+                       $("#sp7").css("font-weight","bold");
+                       $("#sp7").css("font-size","15px");
+                      $("#sp7").css("color","red");
+                      $("#sp7").fadeOut(8000);
+                    status=false;  
+                  }
+                 */ 
+          
+             return status;
+      }     
+   function processresponse(responseText,textStatus)
+     {
+       if(responseText.trim()==="pass") {  
+          $("#register").after("<br><span id='result'>Registration Successfull Done!</span><br>");
+          $("#result").after("<a href='Login_Page.html'>Click Here Login</a>")
+            $("#result").css("color","green");
+            $("#result").fadeOut(2000);
+        }
+        else if(responseText.trim()==="fail")
+        {
+           // alert("Fail")
+            $("#a1").after("<span id='result'>Registration Fail</span>");
+            $("#result").css("color","red");
+            $("#result").fadeOut(2000);
+        }
+        else if(responseText.trim()==="already")
+        {
+            alert(" UerId Already Exists")
+            //alert("UserId Already Exists.Please try another");
+            $("#a1").after("<span id='result'>UserId Already Exists</span>");
+            $("#result").css("color","red");
+            $("#result").fadeOut(2000);
+        }
+   }
+   function handleError(xhr)
+    {
+             $("#a1").after("<span id='result'>Some Error Occured @ server</span>");
+            $("#result").css("color","red");
+            $("#result").fadeOut(2000);
+    }   
+
+</script>
+      
+        <style>
+            body{
+                 margin:0px;
+          border: 0px;
+          padding-top: 70px;
+            }
+        </style> 
+    </head>
+ <body >
+  <div class="container pt-3">
+     <nav class="navbar navbar-expand-sm fixed-top" >
+            <div class="navbar-brand">Welcome! Ramashankar Yadav </div>
+             
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+                 <span class="navbar-toggler-icon" style="color:white"></span>
+            </button>    
+     <div class="collapse navbar-collapse" id="collapsibleNavbar">
+           <ul class="navbar-nav ml-auto">
+             <li class="nav-item">
+                <button type="button" class="btn btn-danger btn-sm">
+                    <a href="HomePage.html"><span class="glyphicon glyphicon-log-out">Back To Home</span></a>
+                </button>
+            </li>
+          </ul>
+     </div>   
+    </nav>
+  <div class="registration">
+    <h1 style="font-size:3vw;"> Registration Form</h1><br>
+    
+          <div class="form-group">
+             <label for="uname">Username:</label>
+             <input type="text" class="form-control" id="username" placeholder="Enter username" name="uname" required>
+            <div class="valid-feedback"></div>
+             <div class="invalid-feedback">Please fill out this field.</div>
+          </div>
+     <div class="form-group">
+          <label for="email">Email address:</label>
+          <input type="email" class="form-control" placeholder="Enter email" id="userid" required>  
+           <div class="valid-feedback"></div>
+            <div class="invalid-feedback">Please fill out this field.</div>
+
+     </div> 
+        <label for="Mobile-No">Mobile No:</label>
+          <input type="tel" class="form-control" placeholder="Enter Mobile-No" id="phone" required>  
+           <div class="valid-feedback"></div>
+            <div class="invalid-feedback">Please fill out this field.</div>
+        
+    <div>    
+    <div class="form-group">
+        <label for="pwd">Password:</label>
+        <input type="password" class="form-control" id="password" placeholder="Enter password" name="pswd" required>
+        <div class="valid-feedback"></div>
+        <div class="invalid-feedback">Please fill out this field.</div>
+    </div>
+    <div class="form-group">
+        <label for="pwd">Confirm-Pass:</label>
+        <input type="password" class="form-control" id="reenterpassword" placeholder="Enter password" name="pswd" required>
+        <div class="valid-feedback"></div>
+        <div class="invalid-feedback">Please fill out this field.</div>
+    </div>    
+       
+        <div> 
+            <button class="btn btn-primary" id="register">Register</button><br>
+         
+        </div>
+  
+  </div>
+  </div>   
+  </div>   
+ </body>
+</html>

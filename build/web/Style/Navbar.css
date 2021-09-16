@@ -1,0 +1,35 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 20 Nov, 2020, 3:17:50 PM
+    Author     : Ramashankar kumar
+*/
+.navbar-expand-sm{
+    background-color:#404040;
+    border-radius: 5px;
+    display: box;
+}
+
+.navbar-brand{
+    color:white;
+    font-size:2vw;
+}
+.nav-link{
+    font-family: sans-serif;
+    font-size: 20px;
+    font-style:bold;
+}
+.nav-link:hover{
+    color: green;
+    text-decoration: underline;
+}
+.navbar-toggler { border-color: #008000; }
+.navbar-toggler-icon {
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(255,102,203, 0.5)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
+}
+.nav-item{
+    margin-left:20px;
+}

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="Style/Stylesheet.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+        <script type="text/javascript" src="Script/Registration.js"> </script>
+        <script type="text/javascript" src="Script/jquery.js"></script>
+        <script type="text/javascript" src="Script/Form_validation.js"></script>
+        <link rel="stylesheet" type="text/css" href="Style/Navbar.css"> 
+        <script src="Script/Login.js"></script>
+        <style>
+             body{
+          margin:0px;
+          border: 0px;
+          padding-top: 100px;
+      }
+        </style>
+    </head>
+ <body >
+  <div class="container pt-3">
+    <nav class="navbar navbar-expand-sm fixed-top" >
+            <div class="navbar-brand">Welcome! Ramashankar Yadav </div>
+             
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+                 <span class="navbar-toggler-icon" style="color:white"></span>
+            </button>    
+     <div class="collapse navbar-collapse" id="collapsibleNavbar">
+           <ul class="navbar-nav ml-auto">
+             <li class="nav-item">
+                <button type="button" class="btn btn-danger btn-sm">
+                    <a href="HomePage.html"><span class="glyphicon glyphicon-log-out">Back To Home</span></a>
+                </button>            </li>
+          </ul>
+     </div>   
+    </nav>
+   <div class="registration"> 
+         <h1 style="font-size:3vw;"> Login Form</h1><br>
+            
+         <form class="needs-validation" novalidate>
+          <div class="form-group">
+             <label for="uname">Username:</label>
+             <input type="text" class="form-control" id="userid" placeholder="Enter userId" name="uname" required>
+             <div class="valid-feedback"></div>
+             <div class="invalid-feedback">Please fill out this field.</div>
+         </div>
+ 
+    <div>    
+       <div class="form-group">
+        <label for="pwd">Password:</label>
+        <input type="password" class="form-control" id="password" placeholder="Enter password" name="pswd" required>
+        <div class="valid-feedback"></div>
+        <div class="invalid-feedback">Please fill out this field.</div>
+      </div>
+              
+    
+        <div > 
+            <input type="button" class="btn btn-primary" value="Login" id="loginbtn"><br><br>
+             <p>don't Have Account?  <a href='/Online_Eximination_app/Registration_page.html' style="color:crimson">Click</a> Here for Registration</p>
+        </div>
+        <span id="loginresult"></span><br>
+  </form> 
+  
+  </div>   
+  </div>   
+ </body>
+</html>
+

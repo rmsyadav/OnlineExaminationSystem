@@ -1,0 +1,52 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 8 Nov, 2020, 11:19:05 AM
+    Author     : Ramashankar kumar
+*/
+*{
+                margin: 0;
+                padding: 0;
+            }
+  body
+      {
+          background-image: url('../Images/onlineexamback.jpg') ;
+          background-repeat: no-repeat; 
+          background-size: cover;
+          font-family:  cursive;
+      }
+        
+         h1{
+                
+               text-align: center;
+                color:white;
+                background: rgba(0,0,0,0.5);
+                padding: 5px;
+                border: 1px solid white;
+                border-radius: 10px;
+                
+           }
+           
+       .registration
+        {
+                margin: auto;
+                width: 50%;
+                text-align: center;
+                color: white;
+                background: rgba(0,0,0,0.5);
+                border: 2px solid white;
+                padding: 50px;
+                border-radius: 50px;
+                
+                
+        }
+        .form-inline{
+            padding-left:20px;
+          
+            
+        }
+
+    
